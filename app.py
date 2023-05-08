@@ -7,13 +7,13 @@ import snowflake.connector
 @st.cache_resource
 def sf_connect():
     cnx = snowflake.connector.connect(
-        user='jsices', 
-        password='Armeta101', 
-        account='zs31584.east-us-2.azure',
-        role='SF_HACKATHON_ROLE',
-        warehouse='SF_HACKATHON_WH',
-        database='SF_HACKATHON',
-        schema='HACKATHON'
+        user=st.secrets["user"], 
+        password=st.secrets["password"],
+        account=st.secrets["account"],
+        role=st.secrets["role"],
+        warehouse=st.secrets["warehouse"],
+        database=st.secrets["database"],
+        schema=st.secrets["schema"],
         )
     return cnx
 
